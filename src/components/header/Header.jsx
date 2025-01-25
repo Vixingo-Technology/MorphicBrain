@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { useMediaQuery } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
+import { NavLink } from "react-router";
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -45,9 +46,13 @@ ElevationScroll.propTypes = {
 };
 
 const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+const navItems = ["Whitepaper", "Research", "Capabilities", "About", "Contact"];
 
 function Header(props) {
+    const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+    const logo = prefersDarkMode ? "/img/logo.png" : "/img/lightlogo.png";
+
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -57,17 +62,23 @@ function Header(props) {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-            <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+            <Typography variant="h6" sx={{ my: 1 }}>
+                <img src={logo} alt="logo" width={50} height={50} />
             </Typography>
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: "center" }}>
-                            <ListItemText primary={item} />
-                        </ListItemButton>
-                    </ListItem>
+                    <NavLink
+                        key={item}
+                        to={item.toLowerCase()}
+                        style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                        <ListItem disablePadding>
+                            <ListItemButton sx={{ textAlign: "center" }}>
+                                <ListItemText primary={item} />
+                            </ListItemButton>
+                        </ListItem>
+                    </NavLink>
                 ))}
             </List>
         </Box>
@@ -75,10 +86,6 @@ function Header(props) {
 
     const container =
         window !== undefined ? () => window().document.body : undefined;
-
-    const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-    const logo = prefersDarkMode ? "/img/logo.png" : "/img/lightlogo.png";
 
     return (
         <Box sx={{ display: "flex" }}>
@@ -105,11 +112,66 @@ function Header(props) {
                             margin: "0 auto",
                         }}
                     >
+                        <NavLink
+                            to="/"
+                            style={{
+                                textDecoration: "none",
+                                margin: "2px auto",
+                                flex: 1,
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                component="div"
+                                sx={{
+                                    flex: 1,
+                                    display: { xs: "flex", sm: "flex" },
+                                    alignItems: "center",
+                                    justifyContent: {
+                                        xs: "center",
+                                        sm: "flex-start",
+                                    },
+                                    textTransform: "uppercase",
+                                    color: (theme) =>
+                                        theme.palette.text.primary,
+                                }}
+                            >
+                                <img
+                                    src={logo}
+                                    alt="logo"
+                                    width={50}
+                                    height={50}
+                                    style={{ marginRight: "10px" }}
+                                />
+                                <b>Morphic</b>Brain
+                            </Typography>
+                        </NavLink>
+                        <Box
+                            sx={{
+                                display: { xs: "none", sm: "block" },
+                            }}
+                        >
+                            {navItems.map((item) => (
+                                <NavLink to={item.toLowerCase()} key={item}>
+                                    <Button
+                                        key={item}
+                                        sx={{
+                                            textTransform: "Capitalize",
+                                            color: (theme) =>
+                                                theme.palette.text.secondary,
+                                        }}
+                                    >
+                                        {item}
+                                    </Button>
+                                </NavLink>
+                            ))}
+                        </Box>{" "}
                         <IconButton
                             aria-label="open drawer"
                             edge="start"
                             onClick={handleDrawerToggle}
                             sx={{
+                                position: "absolute",
                                 mr: 2,
                                 display: { sm: "none" },
                                 color: (theme) => theme.palette.text.primary,
@@ -117,44 +179,6 @@ function Header(props) {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography
-                            variant="h6"
-                            component="div"
-                            sx={{
-                                flex: 1,
-                                display: { xs: "none", sm: "flex" },
-                                alignItems: "center",
-                                textTransform: "uppercase",
-                                color: (theme) => theme.palette.text.primary,
-                            }}
-                        >
-                            <img
-                                src={logo}
-                                alt="logo"
-                                width={50}
-                                height={50}
-                                style={{ marginRight: "10px" }}
-                            />
-                            <b>Morphic</b>Brain
-                        </Typography>
-                        <Box
-                            sx={{
-                                display: { xs: "none", sm: "block" },
-                            }}
-                        >
-                            {navItems.map((item) => (
-                                <Button
-                                    key={item}
-                                    sx={{
-                                        textTransform: "Capitalize",
-                                        color: (theme) =>
-                                            theme.palette.text.secondary,
-                                    }}
-                                >
-                                    {item}
-                                </Button>
-                            ))}
-                        </Box>
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
@@ -170,6 +194,7 @@ function Header(props) {
                     sx={{
                         display: { xs: "block", sm: "none" },
                         "& .MuiDrawer-paper": {
+                            backdropFilter: "blur(24px)",
                             boxSizing: "border-box",
                             width: drawerWidth,
                         },

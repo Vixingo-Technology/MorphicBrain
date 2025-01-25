@@ -11,12 +11,14 @@ const getTheme = (mode) =>
             mode: mode, // 'light' or 'dark'
             ...(mode === "dark"
                 ? {
-                      primary: { main: "#BB0AFE" },
+                      primary: {
+                          main: "#ededed",
+                      },
                       background: { default: "#121212", paper: "#1e1e1e" },
                       text: { primary: "#ffffff", secondary: "#b0b0b0" },
                   }
                 : {
-                      primary: { main: "#9A12FF" },
+                      primary: { main: "#121212" },
                       background: { default: "#ffffff", paper: "#f5f5f5" },
                       text: { primary: "#000000", secondary: "#4f4f4f" },
                   }),
