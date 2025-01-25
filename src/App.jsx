@@ -22,6 +22,7 @@ function App() {
                 <Route path="/whitepaper" element={<Paper>whitepaper</Paper>} />
                 <Route path="/research" element={<Paper>research</Paper>} />
                 <Route path="/capabilities" element={<Capabilities />} />
+                <Route path="*" element={<Paper>404</Paper>} />
             </Routes>
         </>
     );
