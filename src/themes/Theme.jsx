@@ -5,32 +5,92 @@ import {
 } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const getTheme = (mode) =>
-    createTheme({
-        palette: {
-            mode: mode, // 'light' or 'dark'
-            ...(mode === "dark"
-                ? {
-                      primary: {
-                          main: "#ededed",
-                      },
-                      background: { default: "#121212", paper: "#1e1e1e" },
-                      text: { primary: "#ffffff", secondary: "#b0b0b0" },
-                  }
-                : {
-                      primary: { main: "#121212" },
-                      background: { default: "#ffffff", paper: "#f5f5f5" },
-                      text: { primary: "#000000", secondary: "#4f4f4f" },
-                  }),
-        },
-        typography: {
-            fontFamily: "Roboto, Arial, sans-serif",
-        },
-    });
 export const ThemeProvider = ({ children }) => {
+    const getTheme = (mode) =>
+        createTheme({
+            palette: {
+                mode: mode, // 'light' or 'dark'
+                ...(mode === "dark"
+                    ? {
+                          primary: {
+                              main: "#ededed",
+                          },
+                          background: { default: "#121212", paper: "#1e1e1e" },
+                          text: { primary: "#ffffff", secondary: "#b0b0b0" },
+                      }
+                    : {
+                          primary: { main: "#121212" },
+                          background: { default: "#ffffff", paper: "#f5f5f5" },
+                          text: { primary: "#000000", secondary: "#4f4f4f" },
+                      }),
+            },
+            typography: {
+                fontFamily: "Andika, Roboto, Arial, sans-serif",
+                h1: {
+                    // fontSize: "59px",
+                    // lineHeight: "120%",
+                    // fontWeight: "700",
+                    "@media (max-width:1440px)": {
+                        fontSize: "4rem",
+                    },
+                },
+                h2: {
+                    // fontSize: "59px",
+                    // lineHeight: "120%",
+                    // fontWeight: "700",
+                    "@media (max-width:600px)": {
+                        fontSize: "2rem",
+                    },
+                },
+                h5: {
+                    // fontSize: "59px",
+                    // lineHeight: "120%",
+                    // fontWeight: "700",
+                    "@media (max-width:600px)": {
+                        fontSize: "1rem",
+                    },
+                },
+            },
+            components: {
+                MuiButton: {
+                    styleOverrides: {
+                        root: {
+                            borderRadius: "50px",
+                            textTransform: "none",
+
+                            // padding: "10px 20px",
+                            // fontSize: "16px",
+                            // fontWeight: "bold",
+                            // backgroundColor: "#1976d2",
+                            // color: "#ffffff",
+                            "&:hover": {
+                                // backgroundColor: "#115293",
+                            },
+                        },
+                        contained: {
+                            // boxShadow: "none",
+                            "&:hover": {
+                                // boxShadow: "none",
+                            },
+                        },
+                        outlined: {
+                            // border: "2px solid #1976d2",
+                            "&:hover": {
+                                // border: "2px solid #115293",
+                            },
+                        },
+                        text: {
+                            "&:hover": {
+                                textDecoration: "underline",
+                                backgroundColor: "transparent",
+                            },
+                        },
+                    },
+                },
+            },
+        });
     // Detect system preference
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
     // Create theme based on system preference
     const theme = React.useMemo(
         () => getTheme(prefersDarkMode ? "dark" : "light"),

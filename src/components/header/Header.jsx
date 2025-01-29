@@ -17,6 +17,7 @@ import Button from "@mui/material/Button";
 import { useMediaQuery } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { NavLink } from "react-router";
+import Logo from "../dynamic/Logo";
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -112,40 +113,7 @@ function Header(props) {
                             margin: "0 auto",
                         }}
                     >
-                        <NavLink
-                            to="/"
-                            style={{
-                                textDecoration: "none",
-                                margin: "2px auto",
-                                flex: 1,
-                            }}
-                        >
-                            <Typography
-                                variant="h6"
-                                component="div"
-                                sx={{
-                                    flex: 1,
-                                    display: { xs: "flex", sm: "flex" },
-                                    alignItems: "center",
-                                    justifyContent: {
-                                        xs: "center",
-                                        sm: "flex-start",
-                                    },
-                                    textTransform: "uppercase",
-                                    color: (theme) =>
-                                        theme.palette.text.primary,
-                                }}
-                            >
-                                <img
-                                    src={logo}
-                                    alt="logo"
-                                    width={50}
-                                    height={50}
-                                    style={{ marginRight: "10px" }}
-                                />
-                                <b>Morphic</b>Brain
-                            </Typography>
-                        </NavLink>
+                        <Logo />
                         <Box
                             sx={{
                                 display: { xs: "none", sm: "block" },
@@ -165,6 +133,10 @@ function Header(props) {
                                     </Button>
                                 </NavLink>
                             ))}
+                            <NavLink to={"/auth/signup"}>
+                                {" "}
+                                <Button variant="outlined">Get Started</Button>
+                            </NavLink>
                         </Box>{" "}
                         <IconButton
                             aria-label="open drawer"
