@@ -40,7 +40,7 @@ function Signup() {
                         }}
                     >
                         <Box sx={{ my: "1rem" }}>
-                            <Typography variant="h2">
+                            <Typography variant="h2" sx={{ fontWeight: 700 }}>
                                 Start building with your free plan
                             </Typography>
                             <br />

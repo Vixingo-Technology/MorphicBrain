@@ -25,7 +25,7 @@ export const ThemeProvider = ({ children }) => {
                       }),
             },
             typography: {
-                fontFamily: "Andika, Roboto, Arial, sans-serif",
+                fontFamily: " Roboto, Arial, sans-serif",
                 h1: {
                     // fontSize: "59px",
                     // lineHeight: "120%",

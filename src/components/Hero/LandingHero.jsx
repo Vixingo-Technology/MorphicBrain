@@ -31,10 +31,16 @@ function LandingHero() {
                         size={{ xs: 2, sm: 4, md: 7 }}
                         sx={{ backgroundColor: "", my: "4rem" }}
                     >
-                        <Typography variant="h1" fontFamily={"inter"}>
+                        <Typography variant="h1">
                             AI Super Brain for Business{" "}
                         </Typography>
-                        <Typography variant="h5" fontFamily={"inter"}>
+                        {/* <Typography variant="body1" sx={{ my: "1rem" }}>
+                            {" "}
+                            Empowering Minds: MorphicBrain integrates DeepSeek,
+                            championing adaptability and scalability without the
+                            weight of heavy infrastructure.{" "}
+                        </Typography> */}
+                        <Typography variant="h5">
                             The Smartest Investment for SMEs
                         </Typography>
                         <Button

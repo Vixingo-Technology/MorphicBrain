@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "@mui/material/Card";
-import { Box, Button, TextField, Typography } from "@mui/material";
+import { Box, Button, Snackbar, TextField, Typography } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import { NavLink } from "react-router";
@@ -63,17 +63,19 @@ function SignupForm() {
                         <NavLink>Self Service PSS</NavLink> and{" "}
                         <NavLink> Privacy Policy</NavLink>.
                     </Typography>
-                    <Button
-                        variant="contained"
-                        fullWidth
-                        sx={{
-                            borderRadius: "50px",
-                            my: "1rem",
-                            px: "2rem",
-                        }}
-                    >
-                        Continue
-                    </Button>
+                    <NavLink to={"/dashboard"}>
+                        <Button
+                            variant="contained"
+                            fullWidth
+                            sx={{
+                                borderRadius: "50px",
+                                my: "1rem",
+                                px: "2rem",
+                            }}
+                        >
+                            Continue
+                        </Button>
+                    </NavLink>
                     <Typography variant="body2">
                         Already have an account? <NavLink>Login</NavLink>
                     </Typography>

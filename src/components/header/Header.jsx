@@ -134,7 +134,6 @@ function Header(props) {
                                 </NavLink>
                             ))}
                             <NavLink to={"/auth/signup"}>
-                                {" "}
                                 <Button variant="outlined">Get Started</Button>
                             </NavLink>
                         </Box>{" "}
