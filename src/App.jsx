@@ -13,7 +13,7 @@ import LandingLayout from "./layouts/LandingLayout";
 import DashLayout from "./layouts/DashLayout";
 import Dashboard from "./pages/Dashboard";
 
-import AuthLayout from "./layouts/AUthLayout";
+import AuthLayout from "./layouts/AuthLayout";
 
 function App() {
     return (
