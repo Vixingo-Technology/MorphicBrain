@@ -25,7 +25,7 @@ export const ThemeProvider = ({ children }) => {
                       }),
             },
             typography: {
-                fontFamily: " Roboto, Arial, sans-serif",
+                fontFamily: "Inter, Roboto, Arial, sans-serif",
                 h1: {
                     // fontSize: "59px",
                     // lineHeight: "120%",
@@ -47,7 +47,7 @@ export const ThemeProvider = ({ children }) => {
                     // lineHeight: "120%",
                     // fontWeight: "700",
                     "@media (max-width:600px)": {
-                        fontSize: "1rem",
+                        fontSize: "2rem",
                     },
                 },
             },
