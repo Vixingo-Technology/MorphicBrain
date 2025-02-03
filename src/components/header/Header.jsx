@@ -120,7 +120,10 @@ function Header(props) {
                             }}
                         >
                             {navItems.map((item) => (
-                                <NavLink to={item.toLowerCase()} key={item}>
+                                <NavLink
+                                    to={"/" + item.toLowerCase()}
+                                    key={item}
+                                >
                                     <Button
                                         key={item}
                                         sx={{

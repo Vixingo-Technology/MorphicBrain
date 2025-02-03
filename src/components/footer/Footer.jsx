@@ -39,15 +39,26 @@ export default function Footer() {
                         columns={{ xs: 2, md: 12 }}
                     >
                         <Grid item size={{ xs: 2, md: 4 }}>
-                            <SubForm />
                             <Box
-                                width={250}
-                                margin={{
-                                    xs: "30px auto auto auto",
-                                    md: "60px 0px 0px 0px",
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: {
+                                        xs: "column-reverse",
+                                        md: "column",
+                                    },
                                 }}
                             >
-                                <Logo />
+                                {" "}
+                                <SubForm />
+                                <Box
+                                    width={200}
+                                    margin={{
+                                        // xs: "30px auto auto auto",
+                                        md: "60px 0px 0px 0px",
+                                    }}
+                                >
+                                    <Logo />
+                                </Box>
                             </Box>
                             {/* <Typography
                                 variant="body2"
@@ -219,7 +230,7 @@ export default function Footer() {
                             container
                             justifyContent="space-between"
                             alignItems="center"
-                            flexDirection={{ xs: "column", sm: "row" }}
+                            flexDirection={{ sm: "row" }}
                             sx={{ fontSize: "12px" }}
                             size={12}
                         >

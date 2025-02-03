@@ -34,8 +34,8 @@ export default function SubForm() {
                     flexDirection: "column",
                     // alignItems: "center",
                     gap: 2,
-                    maxWidth: 300,
-                    margin: "0 auto",
+                    maxWidth: "400px",
+                    // margin: "0 auto",
                     padding: "12px",
                 }}
             >
