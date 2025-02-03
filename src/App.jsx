@@ -22,11 +22,27 @@ function App() {
             <Routes>
                 <Route path="dashboard" element={<DashLayout />}>
                     <Route index element={<Dashboard />} />
-                    <Route path="about" element={<About />} />
+                    <Route
+                        path="analytics"
+                        element={<Paper>Analytics</Paper>}
+                    />
+                    <Route path="models" element={<Paper>Models</Paper>} />
+                    <Route
+                        path="documents"
+                        element={<Paper>Documents</Paper>}
+                    />
+                    <Route path="terminal" element={<Paper>Terminal</Paper>} />
+                    <Route path="chat" element={<Paper>Chat</Paper>} />
+                    <Route path="plans" element={<Paper>Plans</Paper>} />
+                    <Route
+                        path="settings"
+                        element={<Paper>Users Settings</Paper>}
+                    />
                 </Route>
 
                 <Route element={<LandingLayout />}>
                     <Route index element={<Landing />} />
+                    <Route path="about" element={<About />} />
                     <Route path="capabilities" element={<Capabilities />} />
                 </Route>
                 <Route path="auth" element={<AuthLayout />}>

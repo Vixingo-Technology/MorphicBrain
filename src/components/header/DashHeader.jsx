@@ -32,8 +32,15 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MiniLogo from "../dynamic/MiniLogo";
-
+import { useNavigate } from "react-router";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import MemoryIcon from "@mui/icons-material/Memory";
+import ChatIcon from "@mui/icons-material/Chat";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import SettingsIcon from "@mui/icons-material/Settings";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import DocumentScannerIcon from "@mui/icons-material/DocumentScanner";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -272,6 +279,7 @@ export default function DashHeader({ open, setOpen }) {
         setOpen(!open);
     };
     // drawer end
+    let navigate = useNavigate();
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar
@@ -370,132 +378,393 @@ export default function DashHeader({ open, setOpen }) {
                 <DrawerHeader sx={{ paddingLeft: { xs: 0.5, sm: 1 } }}>
                     {/* <Logo /> */}
                 </DrawerHeader>
-                <Divider />
+
                 <List>
-                    {[
-                        "Overview",
-                        "Analytics",
-                        "Models",
-                        "Documents",
-                        "Terminal",
-                        "Chat",
-                    ].map((text, index) => (
-                        <ListItem
-                            key={text}
-                            disablePadding
-                            sx={{ display: "block" }}
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("/dashboard");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
                         >
-                            <ListItemButton
-                                sx={[
-                                    {
-                                        minHeight: 48,
-                                        px: 2.5,
-                                    },
-                                    open
-                                        ? {
-                                              justifyContent: "initial",
-                                          }
-                                        : {
-                                              justifyContent: "center",
-                                          },
-                                ]}
-                            >
-                                <ListItemIcon
-                                    sx={[
-                                        {
-                                            minWidth: 0,
-                                            justifyContent: "center",
-                                        },
-                                        open
-                                            ? {
-                                                  mr: 3,
-                                              }
-                                            : {
-                                                  mr: "auto",
-                                              },
-                                    ]}
-                                >
-                                    {index % 2 === 0 ? (
-                                        <InboxIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
-                                </ListItemIcon>
-                                <ListItemText
-                                    primary={text}
-                                    sx={[
-                                        open
-                                            ? {
-                                                  opacity: 1,
-                                              }
-                                            : {
-                                                  opacity: 0,
-                                              },
-                                    ]}
-                                />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {["Settings", "Plans"].map((text, index) => (
-                        <ListItem
-                            key={text}
-                            disablePadding
-                            sx={{ display: "block" }}
+                            <DashboardIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Overview"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("analytics");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
                         >
-                            <ListItemButton
-                                sx={[
-                                    {
-                                        minHeight: 48,
-                                        px: 2.5,
-                                    },
-                                    open
-                                        ? {
-                                              justifyContent: "initial",
-                                          }
-                                        : {
-                                              justifyContent: "center",
-                                          },
-                                ]}
-                            >
-                                <ListItemIcon
-                                    sx={[
-                                        {
-                                            minWidth: 0,
-                                            justifyContent: "center",
-                                        },
-                                        open
-                                            ? {
-                                                  mr: 3,
-                                              }
-                                            : {
-                                                  mr: "auto",
-                                              },
-                                    ]}
-                                >
-                                    {index % 2 === 0 ? (
-                                        <InboxIcon />
-                                    ) : (
-                                        <MailIcon />
-                                    )}
-                                </ListItemIcon>
-                                <ListItemText
-                                    primary={text}
-                                    sx={[
-                                        open
-                                            ? {
-                                                  opacity: 1,
-                                              }
-                                            : {
-                                                  opacity: 0,
-                                              },
-                                    ]}
-                                />
-                            </ListItemButton>
-                        </ListItem>
-                    ))}
+                            <BarChartIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Analytics"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("models");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
+                        >
+                            <MemoryIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Models"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("documents");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
+                        >
+                            <DocumentScannerIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Documents"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("terminal");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
+                        >
+                            <TerminalIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Terminal"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("chat");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
+                        >
+                            <ChatIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Chat"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <Divider />
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("settings");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
+                        >
+                            <SettingsIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Settings"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
+                    <ListItemButton
+                        onClick={() => {
+                            navigate("plans");
+                        }}
+                        sx={[
+                            {
+                                minHeight: 48,
+                                px: 2.5,
+                            },
+                            open
+                                ? {
+                                      justifyContent: "initial",
+                                  }
+                                : {
+                                      justifyContent: "center",
+                                  },
+                        ]}
+                    >
+                        <ListItemIcon
+                            sx={[
+                                {
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                },
+                                open
+                                    ? {
+                                          mr: 3,
+                                      }
+                                    : {
+                                          mr: "auto",
+                                      },
+                            ]}
+                        >
+                            <LocalOfferIcon />
+                        </ListItemIcon>
+                        <ListItemText
+                            primary="Upgrade Plans"
+                            sx={[
+                                open
+                                    ? {
+                                          opacity: 1,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                      },
+                            ]}
+                        />
+                    </ListItemButton>
                 </List>
             </Drawer>
 

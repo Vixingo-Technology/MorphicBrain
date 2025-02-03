@@ -14,8 +14,8 @@ export default function DashLayout() {
             <Box
                 sx={{
                     pt: "64px",
-                    maxWidth: open ? 800 : 1140,
-                    margin: "0 auto",
+                    maxWidth: open ? 1240 : 1440,
+                    margin: "0 20px auto auto",
                     pl: { xs: "60px", sm: "70px", xl: 0 },
                     transition: "max-width 0.5s",
                 }}
