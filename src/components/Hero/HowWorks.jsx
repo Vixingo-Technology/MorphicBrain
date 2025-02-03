@@ -44,14 +44,15 @@ export default function HowWorks() {
                 sx={{
                     display: "flex",
                     justifyContent: "space-between",
-                    flexDirection: { xs: "column", sm: "row" },
+                    alignItems: "center",
+                    flexDirection: { xs: "column", md: "row" },
                     mt: 5,
                 }}
             >
                 <Box>
                     <img src="/img/skull.png" width={"100%"} alt="" />
                 </Box>
-                <Box sx={{ width: { xs: "100%", sm: "40%" } }}>
+                <Box sx={{ width: { xs: "100%", sm: "30%" } }}>
                     <Stepper orientation="vertical" sx={{ mt: 5, mb: 5 }}>
                         {steps.map((label) => (
                             <Step key={label.title}>

@@ -8,7 +8,7 @@ function Feature() {
             <Box
                 textAlign={"center"}
                 sx={{ maxWidth: "1140px", mx: "auto" }}
-                py={10}
+                pt={10}
             >
                 <Typography
                     variant="h4"

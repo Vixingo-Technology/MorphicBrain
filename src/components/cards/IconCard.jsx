@@ -32,7 +32,10 @@ export default function IconCard({ title, description }) {
     return (
         <>
             <Box sx={{ minWidth: 275, mx: "auto", height: "100%" }}>
-                <Card variant="outlined" sx={{ padding: 1, height: "100%" }}>
+                <Card
+                    variant="outlined"
+                    sx={{ padding: 1, borderRadius: "20px", height: "100%" }}
+                >
                     {card}
                 </Card>
             </Box>
