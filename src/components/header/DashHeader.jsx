@@ -33,6 +33,7 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MiniLogo from "../dynamic/MiniLogo";
 
+import DashboardIcon from "@mui/icons-material/Dashboard";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -155,7 +156,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function DashHeader() {
+export default function DashHeader({ open, setOpen }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -258,7 +259,7 @@ export default function DashHeader() {
     );
     // drawer start
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
+    // const [open, setOpen] = React.useState(false);
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -367,7 +368,7 @@ export default function DashHeader() {
             </AppBar>
             <Drawer variant="permanent" open={open}>
                 <DrawerHeader sx={{ paddingLeft: { xs: 0.5, sm: 1 } }}>
-                    <Logo />
+                    {/* <Logo /> */}
                 </DrawerHeader>
                 <Divider />
                 <List>

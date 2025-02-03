@@ -14,6 +14,7 @@ import DashLayout from "./layouts/DashLayout";
 import Dashboard from "./pages/Dashboard";
 
 import AuthLayout from "./layouts/AuthLayout";
+import Error from "./pages/Error";
 
 function App() {
     return (
@@ -37,7 +38,7 @@ function App() {
                     />
                 </Route>
 
-                <Route path="*" element={<Paper>404</Paper>} />
+                <Route path="*" element={<Error />} />
             </Routes>
         </>
     );

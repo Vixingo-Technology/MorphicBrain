@@ -34,7 +34,7 @@ export default function SubForm() {
                     flexDirection: "column",
                     // alignItems: "center",
                     gap: 2,
-                    maxWidth: 400,
+                    maxWidth: 300,
                     margin: "0 auto",
                     padding: "12px",
                 }}
@@ -47,7 +47,9 @@ export default function SubForm() {
                         input: {
                             endAdornment: (
                                 <InputAdornment position="end">
-                                    <IconButton sx={{ p: 1, right: -10 }}>
+                                    <IconButton
+                                        sx={{ p: 1, right: -10, bottom: 5 }}
+                                    >
                                         <ArrowForwardIosSharpIcon />
                                     </IconButton>
                                 </InputAdornment>
