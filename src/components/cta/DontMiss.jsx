@@ -16,7 +16,7 @@ export default function DontMiss() {
                     },
                 }}
             >
-                Put a Tiger In Your Business!{" "}
+                Put a Roaring Lion in your business!{" "}
             </Typography>
             <Typography
                 variant="h6"

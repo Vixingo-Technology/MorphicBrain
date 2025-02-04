@@ -469,7 +469,9 @@ const OldCap = () => {
                                         MorphicBrain!
                                     </h6>
                                     <span>And</span>
-                                    <h4>"Put a Tiger In Your Business!"</h4>
+                                    <h4>
+                                        "Put a Roaring Lion in your business!"
+                                    </h4>
                                     <p>
                                         Register now and select our Trial Plan
                                         to experience the power of our AI
