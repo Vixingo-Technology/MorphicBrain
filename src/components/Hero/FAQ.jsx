@@ -51,7 +51,7 @@ const AccordionSummary = styled((props) => (
 }));
 export default function FAQ() {
     return (
-        <Box sx={{ pt: 4, maxWidth: "1140px", margin: "0 auto" }}>
+        <Box sx={{ pt: 8, maxWidth: "1140px", margin: "0 auto" }}>
             <Typography variant="h4" align="center" mb={4} gutterBottom>
                 Frequently Asked Questions
             </Typography>

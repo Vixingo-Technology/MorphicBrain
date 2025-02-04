@@ -47,7 +47,11 @@ export default function PriceCard({
 
                 <br />
 
-                <hr style={{ color: "Background" }} />
+                <hr
+                    style={{
+                        color: "text.secondary",
+                    }}
+                />
 
                 <Button
                     fullWidth
@@ -57,7 +61,11 @@ export default function PriceCard({
                     {btnText}
                 </Button>
 
-                <hr style={{ color: "Background" }} />
+                <hr
+                    style={{
+                        color: "text.secondary",
+                    }}
+                />
 
                 <Box>
                     {features.map((feature) => (

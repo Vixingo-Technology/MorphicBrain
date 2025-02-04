@@ -42,3 +42,324 @@ div:focus-visible {
 .read-the-docs {
     color: #888;
 }
+
+/* capabilites */
+.capabilities-page-morphic {
+    height: unset !important;
+}
+.capabilities-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    gap: 2.5rem;
+    padding: 0 0 7.5rem 0;
+    margin-top: 6rem;
+}
+.capabilities-left {
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.capabilities-left img {
+    width: 80%;
+    height: auto;
+}
+.capabilities-left::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 196px;
+    /* border-left: 1px solid rgba(225, 225, 255, 0.5); */
+    right: 55%;
+    top: -8%;
+}
+.capabilities-left::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 230px;
+    border-left: 1px solid var(--white);
+    right: 38%;
+    top: -12.65%;
+}
+.insulium-part {
+    position: absolute;
+    top: -45.5%;
+    left: 10.75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: flex-start;
+    gap: 0rem;
+}
+.insulium-part h4 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0;
+}
+.line-insulium {
+    background: #fff;
+    width: 100%;
+    height: 1px;
+}
+.insulium-part p {
+    font-size: 1.55rem;
+    color: var(--white);
+    font-weight: 300;
+    margin: 0.25rem 0 0 0;
+}
+.capabilities-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 50%;
+    position: relative;
+}
+.capabilities-right::before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 1px;
+    border-top: 1px solid var(--white);
+    left: -42%;
+    top: 3.5%;
+}
+.capabilities-right h3 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin: 0;
+    border-bottom: 2px solid #fff;
+}
+.cr-modules-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+.crm-content {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.crm-content span {
+    /* font-size: 1.75rem; */
+    font-weight: 400;
+    color: var(--white);
+}
+.crm-content span:hover {
+    color: var(--primary);
+}
+.more-for-client {
+    font-size: 1.65rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin: 0;
+}
+.crm-content:hover .hover-box-crm {
+    opacity: 1;
+    visibility: visible;
+}
+.hover-box-crm {
+    visibility: hidden;
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    text-align: center;
+    padding: 1.35rem;
+    border-radius: 8px;
+    /* font-size: 1rem; */
+    position: absolute;
+    z-index: 1;
+    bottom: 20%;
+    right: 10%;
+    transform: translate(0%, 30%);
+    opacity: 0;
+    transition:
+        opacity 0.3s,
+        transform 0.3s;
+    box-shadow: #0000003d 0 3px 8px;
+    max-width: 400px;
+}
+.hover-box-crm h5 {
+    font-size: 26px;
+    text-align: center;
+    width: 100%;
+    color: var(--black);
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+.hover-box-crm p {
+    /* font-size: 1.45rem; */
+    width: 100%;
+    font-weight: 400;
+    color: var(--black);
+
+    /* margin: 0 0 0.5rem 0; */
+    text-align: left;
+}
+.hover-box-crm h6 {
+    font-size: 1.55rem;
+    width: 100%;
+    color: var(--black);
+    margin: 1rem 0;
+    font-weight: 600;
+    text-align: left;
+}
+/* .tooltip-pointer {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 0;
+    height: 0;
+
+    border-left: 10px solid #e4e9a7;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+} */
+
+/* INSULIUM SECTION  */
+.insulium-section {
+    width: 100%;
+    padding: 3.5rem 0 10rem 0;
+}
+.bubble-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bubble {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    padding: 11rem 3rem;
+    background-color: rgba(225, 225, 225, 0.2);
+    border-radius: 45% 60% 50% 50% / 40% 50% 50% 60%;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        inset 0 -5px 15px rgba(0, 0, 0, 0.05);
+}
+.mini-bubbles {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.mini-bubble {
+    width: 12px;
+    height: 12px;
+    background: #ffffff81;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+.content {
+    text-align: center;
+}
+.content h1 {
+    font-size: 2.45rem;
+    color: var(--black);
+    font-weight: 700;
+    margin: 0 0 2rem 0;
+}
+.content p {
+    color: var(--black);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    font-size: 1.45rem;
+    width: 100%;
+    padding: 0 10rem 0 5.5rem;
+}
+.content h5 {
+    color: var(--black);
+    font-size: 2.35rem;
+    width: 100%;
+    font-style: italic;
+    font-weight: 600;
+    margin: 2rem 0;
+}
+.content h6 {
+    color: var(--black);
+    font-size: 1.65rem;
+    max-width: 60%;
+    font-weight: 600;
+    margin: 0 auto 1rem auto;
+}
+.content span {
+    color: var(--black);
+    font-size: 1.35rem;
+    font-weight: 400;
+}
+.content h4 {
+    color: var(--primary);
+    font-size: 2.75rem;
+    width: 100%;
+    font-weight: 600;
+    margin: 1rem 0;
+    font-style: italic;
+}
+.register-dropdown-container.insulium-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-dropdown-container.insulium-register .yellow-btn {
+    font-size: 1.75rem;
+    padding: 1rem 2.25rem;
+    color: var(--white);
+    background-color: var(--primary) !important;
+    border-radius: 0.85rem;
+    font-weight: 400;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register-dropdown-container.insulium-register .register-dropdown {
+    right: 30%;
+}
+
+@media (max-width: 768px) {
+    .bubble {
+        padding: 1rem 2rem;
+        /* border-radius: 30% 70% 40% 60% / 40% 40% 60% 50%; */
+    }
+
+    .content h1 {
+        font-size: 1.3rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+        padding: 0;
+    }
+    .capabilities-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 0 5rem 0;
+    }
+    .insulium-part {
+        position: unset;
+    }
+    .capabilities-left {
+        width: 100%;
+    }
+    .capabilities-right {
+        width: 100%;
+    }
+    .content h5 {
+        font-size: 1.2rem;
+    }
+}

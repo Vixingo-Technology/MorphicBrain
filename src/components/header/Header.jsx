@@ -18,6 +18,7 @@ import { useMediaQuery } from "@mui/material";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import { NavLink } from "react-router";
 import Logo from "../dynamic/Logo";
+import GetStarted from "../buttons/GetStarted";
 
 function ElevationScroll(props) {
     const { children, window } = props;
@@ -81,6 +82,7 @@ function Header(props) {
                         </ListItem>
                     </NavLink>
                 ))}
+                <GetStarted />
             </List>
         </Box>
     );
