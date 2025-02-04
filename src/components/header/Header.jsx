@@ -72,7 +72,7 @@ function Header(props) {
                 {navItems.map((item) => (
                     <NavLink
                         key={item}
-                        to={item.toLowerCase()}
+                        to={"/" + item.toLowerCase()}
                         style={{ textDecoration: "none", color: "inherit" }}
                     >
                         <ListItem disablePadding>
@@ -122,7 +122,10 @@ function Header(props) {
                             }}
                         >
                             {navItems.map((item) => (
-                                <NavLink to={item.toLowerCase()} key={item}>
+                                <NavLink
+                                    to={"/" + item.toLowerCase()}
+                                    key={item}
+                                >
                                     <Button
                                         key={item}
                                         sx={{
