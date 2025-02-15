@@ -23,10 +23,11 @@ export default function PricingPlan() {
                         btnText={"Start Building for free"}
                         features={[
                             "Standard Adaptive AI Module",
-                            "Limited to 10 users",
+                            "Limited to 1 users",
                             "Standard Data Storage",
                             "Standard Data Processing",
                         ]}
+                        des2={"Free Trial for 7 days"}
                     />
                     <PriceCard
                         title={"Essentials"}
@@ -37,7 +38,7 @@ export default function PricingPlan() {
                         btnText={"Get Started"}
                         features={[
                             "Standard Adaptive AI Module",
-                            "Limited to 10 users",
+                            "Limited to 2 users",
                             "Standard Data Storage",
                             "Standard Data Processing",
                         ]}
@@ -65,7 +66,7 @@ export default function PricingPlan() {
                         btnText={"Contact Sales"}
                         features={[
                             "Standard Adaptive AI Module",
-                            "Limited to 10 users",
+                            "Up to 10 users",
                             "Standard Data Storage",
                             "Standard Data Processing",
                         ]}

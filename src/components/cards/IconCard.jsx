@@ -18,8 +18,12 @@ const bull = (
 export default function IconCard({ title, description }) {
     const card = (
         <React.Fragment>
-            <CardContent>
-                <Typography variant="h5" component="div">
+            <CardContent sx={{ textAlign: "justify" }}>
+                <Typography
+                    variant="h5"
+                    component="div"
+                    sx={{ textAlign: "center" }}
+                >
                     {title}
                 </Typography>
                 <Typography

@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 export default function PriceCard({
     title,
     description,
+    des2,
     price,
     btnText,
     features,
@@ -43,6 +44,10 @@ export default function PriceCard({
                         {price ? <Typography> /month</Typography> : ""}
                     </Typography>
                     <Typography variant="body2">{description}</Typography>
+
+                    <Typography variant="body2" sx={{ mt: 1 }}>
+                        {des2}
+                    </Typography>
                 </Box>
 
                 <br />

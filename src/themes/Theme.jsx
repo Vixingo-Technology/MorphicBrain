@@ -57,12 +57,6 @@ export const ThemeProvider = ({ children }) => {
                         root: {
                             borderRadius: "50px",
                             textTransform: "none",
-
-                            // padding: "10px 20px",
-                            // fontSize: "16px",
-                            // fontWeight: "bold",
-                            // backgroundColor: "#1976d2",
-                            // color: "#ffffff",
                             "&:hover": {
                                 // backgroundColor: "#115293",
                             },

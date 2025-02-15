@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid2";
 import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import Trial from "../buttons/Trial";
 
 function LandingHero() {
     const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -15,7 +16,7 @@ function LandingHero() {
                     maxWidth: "1200px",
                     margin: "0 auto",
                     px: "1.5rem",
-                    py: "2rem",
+                    py: "1.5rem",
 
                     textAlign: { xs: "center", sm: "left" },
                 }}
@@ -40,19 +41,10 @@ function LandingHero() {
                             championing adaptability and scalability without the
                             weight of heavy infrastructure.{" "}
                         </Typography> */}
-                        <Typography variant="h5">
+                        <Typography variant="h5" sx={{ my: "1rem" }}>
                             The Smartest Investment for SMEs
                         </Typography>
-                        <Button
-                            variant="contained"
-                            sx={{
-                                borderRadius: "50px",
-                                mt: "1rem",
-                                px: "2rem",
-                            }}
-                        >
-                            Learn More
-                        </Button>
+                        <Trial />
                     </Grid>
                     <Grid
                         item
