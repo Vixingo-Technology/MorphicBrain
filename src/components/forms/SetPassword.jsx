@@ -17,7 +17,7 @@ export default function SetPassword() {
                 sx={{
                     background: (theme) =>
                         `linear-gradient(90deg,${theme.palette.background.default} 0%, ${theme.palette.background.paper} 100%)`,
-                    height: { xs: "100%", sm: "100vh" },
+                    height: "100vh",
                     display: "flex",
                     flexDirection: "row",
                     justifyContent: "center",
