@@ -63,7 +63,7 @@ function SignupForm() {
                         <NavLink>Self Service PSS</NavLink> and{" "}
                         <NavLink> Privacy Policy</NavLink>.
                     </Typography>
-                    <NavLink to={"/dashboard"}>
+                    <NavLink to={"password"}>
                         <Button
                             variant="contained"
                             fullWidth
@@ -77,7 +77,8 @@ function SignupForm() {
                         </Button>
                     </NavLink>
                     <Typography variant="body2">
-                        Already have an account? <NavLink>Login</NavLink>
+                        Already have an account?{" "}
+                        <NavLink to={"/auth/login"}>Login</NavLink>
                     </Typography>
                     <Typography
                         gutterBottom

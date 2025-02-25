@@ -1,9 +1,9 @@
 import Grid from "@mui/material/Grid2";
 
 import React from "react";
-import Logo from "../components/dynamic/Logo";
+import Logo from "../../components/dynamic/Logo";
 import { Box, Button, Typography } from "@mui/material";
-import SignupForm from "../components/forms/SignupForm";
+import SignupForm from "../../components/forms/SignupForm";
 
 function Signup() {
     return (
@@ -44,7 +44,7 @@ function Signup() {
                                 Start building with your free plan
                             </Typography>
                             <br />
-                            <Typography variant="h5">
+                            <Typography variant="h6">
                                 No credit card required.
                             </Typography>
                         </Box>

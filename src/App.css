@@ -35,6 +35,9 @@
 div:focus-visible {
     outline: none;
 }
+a:-webkit-any-link:focus-visible {
+    outline: none;
+}
 .card {
     padding: 2em;
 }

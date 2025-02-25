@@ -24,8 +24,8 @@ export default function Logo() {
                         display: { xs: "flex", sm: "flex" },
                         alignItems: "center",
                         justifyContent: {
-                            xs: "center",
-                            sm: "flex-start",
+                            // xs: "center",
+                            // sm: "flex-start",
                         },
 
                         textTransform: "uppercase",

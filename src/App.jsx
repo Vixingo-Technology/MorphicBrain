@@ -7,13 +7,18 @@ import { Route, Routes } from "react-router";
 import Landing from "./pages/Landing";
 import About from "./pages/About";
 import Capabilities from "./pages/Capabilities";
-import Signup from "./pages/Signup";
+import Signup from "./pages/Auth/Signup";
 import LandingLayout from "./layouts/LandingLayout";
 import DashLayout from "./layouts/DashLayout";
 import Dashboard from "./pages/Dashboard";
 
 import AuthLayout from "./layouts/AuthLayout";
 import Error from "./pages/Error";
+import Contact from "./pages/Contact";
+import VerifyEmail from "./pages/Auth/VerifyEmail";
+import ForgotPass from "./pages/Auth/ForgotPass";
+import Login from "./pages/Auth/Login";
+import SetPassword from "./components/forms/SetPassword";
 
 function App() {
     return (
@@ -43,14 +48,14 @@ function App() {
                     <Route index element={<Landing />} />
                     <Route path="about" element={<About />} />
                     <Route path="capabilities" element={<Capabilities />} />
+                    <Route path="contact" element={<Contact />} />
                 </Route>
                 <Route path="auth" element={<AuthLayout />}>
                     <Route path="signup" element={<Signup />} />
-                    <Route path="login" element={<Paper>login</Paper>} />
-                    <Route
-                        path="forgot-password"
-                        element={<Paper>forgot-password</Paper>}
-                    />
+                    <Route path="login" element={<Login />} />
+                    <Route path="verify-email" element={<VerifyEmail />} />
+                    <Route path="signup/password" element={<SetPassword />} />
+                    <Route path="forgot-password" element={<ForgotPass />} />
                 </Route>
 
                 <Route path="*" element={<Error />} />
