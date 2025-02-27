@@ -61,8 +61,10 @@ export default function Login() {
                             Continue{" "}
                         </Button>
                         <Typography variant="body2" sx={{ my: 2 }}>
-                            Already have an account?{" "}
-                            <NavLink to={"/auth/login"}>Log in</NavLink>
+                            Don't have an account? &nbsp;
+                            <NavLink to={"/auth/signup/password"}>
+                                Sign up
+                            </NavLink>
                         </Typography>
                         <Stack spacing={2}>
                             <Typography
