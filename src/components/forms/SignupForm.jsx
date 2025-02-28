@@ -7,7 +7,16 @@ import { NavLink } from "react-router";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MicrosoftIcon from "@mui/icons-material/Microsoft";
+import { useDispatch, useSelector } from "react-redux";
+import { updateAuthData } from "../../utils/slice/Auth";
 function SignupForm() {
+    const dispatch = useDispatch();
+    const userData = useSelector((state) => state.auth);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        dispatch(updateAuthData({ field: name, value })); // Dispatch the update action
+    };
+
     return (
         <>
             <Card
@@ -50,7 +59,15 @@ function SignupForm() {
                     <Typography variant="h5" component="div">
                         asasas
                     </Typography> */}
-                    <TextField variant="outlined" fullWidth label="Email" />
+                    <TextField
+                        variant="outlined"
+                        fullWidth
+                        label="Email"
+                        value={userData.email}
+                        name="email"
+                        onChange={handleChange}
+                    />
+
                     <Typography
                         gutterBottom
                         sx={{

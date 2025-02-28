@@ -42,6 +42,11 @@ export const ThemeProvider = ({ children }) => {
                         fontSize: "2rem",
                     },
                 },
+                h3: {
+                    "@media (max-width:600px)": {
+                        fontSize: "2.2rem",
+                    },
+                },
                 h5: {
                     // fontSize: "59px",
                     // lineHeight: "120%",

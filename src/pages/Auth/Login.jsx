@@ -5,6 +5,7 @@ import {
     Stack,
     TextField,
     Typography,
+    IconButton,
 } from "@mui/material";
 import React from "react";
 import Logo from "../../components/dynamic/Logo";
@@ -12,7 +13,27 @@ import { NavLink } from "react-router";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MicrosoftIcon from "@mui/icons-material/Microsoft";
+
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import FilledInput from "@mui/material/FilledInput";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputAdornment from "@mui/material/InputAdornment";
+
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
 export default function Login() {
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
+
+    const handleMouseUpPassword = (event) => {
+        event.preventDefault();
+    };
     return (
         <>
             <Box
@@ -56,10 +77,52 @@ export default function Login() {
                                 fullWidth
                                 label="Email Address"
                             />
+                            <FormControl
+                                sx={{ width: "100%" }}
+                                variant="outlined"
+                            >
+                                <InputLabel htmlFor="outlined-adornment-password">
+                                    Password
+                                </InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-password"
+                                    type={showPassword ? "text" : "password"}
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label={
+                                                    showPassword
+                                                        ? "hide the password"
+                                                        : "display the password"
+                                                }
+                                                onClick={
+                                                    handleClickShowPassword
+                                                }
+                                                onMouseDown={
+                                                    handleMouseDownPassword
+                                                }
+                                                onMouseUp={
+                                                    handleMouseUpPassword
+                                                }
+                                                edge="end"
+                                            >
+                                                {showPassword ? (
+                                                    <VisibilityOff />
+                                                ) : (
+                                                    <Visibility />
+                                                )}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                    label="Password"
+                                />
+                            </FormControl>
                         </Stack>
-                        <Button variant="contained" fullWidth size="large">
-                            Continue{" "}
-                        </Button>
+                        <NavLink to={"/dashboard"}>
+                            <Button variant="contained" fullWidth size="large">
+                                Continue{" "}
+                            </Button>
+                        </NavLink>
                         <Typography variant="body2" sx={{ my: 2 }}>
                             Don't have an account? &nbsp;
                             <NavLink to={"/auth/signup/password"}>

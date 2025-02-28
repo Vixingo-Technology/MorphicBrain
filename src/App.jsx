@@ -19,6 +19,10 @@ import VerifyEmail from "./pages/Auth/VerifyEmail";
 import ForgotPass from "./pages/Auth/ForgotPass";
 import Login from "./pages/Auth/Login";
 import SetPassword from "./components/forms/SetPassword";
+import BlogLayout from "./layouts/BlogLayout";
+import BlogDetail from "./components/blog/BlogDetail";
+import Blog from "./pages/Blog";
+import Profile from "./pages/Auth/Profile";
 
 function App() {
     return (
@@ -49,6 +53,10 @@ function App() {
                     <Route path="about" element={<About />} />
                     <Route path="capabilities" element={<Capabilities />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="blogs" element={<Blog />} />
+                </Route>
+                <Route path="blog/" element={<BlogLayout />}>
+                    <Route path=":id" element={<BlogDetail />} />
                 </Route>
                 <Route path="auth" element={<AuthLayout />}>
                     <Route path="signup" element={<Signup />} />
@@ -56,6 +64,7 @@ function App() {
                     <Route path="verify-email" element={<VerifyEmail />} />
                     <Route path="signup/password" element={<SetPassword />} />
                     <Route path="forgot-password" element={<ForgotPass />} />
+                    <Route path="profile" element={<Profile />} />
                 </Route>
 
                 <Route path="*" element={<Error />} />

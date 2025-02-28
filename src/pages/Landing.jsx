@@ -6,6 +6,7 @@ import PricingPlan from "../components/Hero/PricingPlan";
 import FAQ from "../components/Hero/FAQ";
 import DontMiss from "../components/cta/DontMiss";
 import Sponsor from "../components/Hero/Sponsor";
+import Team from "../components/Hero/Team";
 
 function Landing() {
     return (
@@ -16,6 +17,7 @@ function Landing() {
             <PricingPlan />
             <FAQ />
             <Sponsor />
+            <Team />
             <DontMiss />
         </>
     );
