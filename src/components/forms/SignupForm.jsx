@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import { Box, Button, Snackbar, TextField, Typography } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MicrosoftIcon from "@mui/icons-material/Microsoft";
@@ -16,9 +16,38 @@ function SignupForm() {
         const { name, value } = e.target;
         dispatch(updateAuthData({ field: name, value })); // Dispatch the update action
     };
+    const userEmail = userData?.email || "";
+    const [open, setOpen] = React.useState(false);
+    const [error, setError] = React.useState(false);
+    const navigate = useNavigate();
+    const GoNext = () => {
+        if (!userEmail.includes("@")) {
+            setError(true);
+            setOpen(true);
+        } else {
+            setError(false);
+            setOpen(false);
+            navigate("password");
+        }
+    };
+    const handleClose = (event, reason) => {
+        if (reason === "clickaway") {
+            return;
+        }
+
+        setOpen(false);
+    };
 
     return (
         <>
+            {" "}
+            <Snackbar
+                open={open}
+                message="Please enter a valid email"
+                autoHideDuration={1000}
+                anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                onClose={handleClose}
+            />
             <Card
                 elevation={5}
                 sx={{
@@ -66,6 +95,7 @@ function SignupForm() {
                         value={userData.email}
                         name="email"
                         onChange={handleChange}
+                        error={error}
                     />
 
                     <Typography
@@ -80,19 +110,20 @@ function SignupForm() {
                         <NavLink>Self Service PSS</NavLink> and{" "}
                         <NavLink> Privacy Policy</NavLink>.
                     </Typography>
-                    <NavLink to={"password"}>
-                        <Button
-                            variant="contained"
-                            fullWidth
-                            sx={{
-                                borderRadius: "50px",
-                                my: "1rem",
-                                px: "2rem",
-                            }}
-                        >
-                            Continue
-                        </Button>
-                    </NavLink>
+
+                    <Button
+                        variant="contained"
+                        fullWidth
+                        sx={{
+                            borderRadius: "50px",
+                            my: "1rem",
+                            px: "2rem",
+                        }}
+                        onClick={GoNext}
+                    >
+                        Continue
+                    </Button>
+
                     <Typography variant="body2">
                         Already have an account?{" "}
                         <NavLink to={"/auth/login"}>Login</NavLink>

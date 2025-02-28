@@ -10,8 +10,9 @@ export default function Team() {
             </Typography>
             <Stack
                 sx={{ gap: 2, mt: 2 }}
-                direction="row"
+                direction={{ xs: "column", sm: "row" }}
                 justifyContent="center"
+                alignItems={"center"}
             >
                 <TeamCard
                     imgsrc="/img/tmp1.jpg"
